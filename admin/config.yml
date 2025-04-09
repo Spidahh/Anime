@@ -1,0 +1,23 @@
+backend:
+  name: github
+  repo: "Spidahh/Anime"                    # Sostituisci con il tuo repository GitHub
+  branch: main                             # Modifica se usi un branch diverso
+  auth_scope: repo
+
+media_folder: "static/images/uploads"      # Dove verranno salvate le immagini (se usi il caricamento)
+public_folder: "/images/uploads"
+
+collections:
+  - name: "anime"                          # Nome della collezione
+    label: "Anime"
+    folder: "data"                         # La cartella in cui sono salvati i dati
+    create: false                          # Se vuoi ogni elemento in un file separato, imposta true
+    identifier_field: "titolo"
+    summary: "{{titolo}}"
+    fields:
+      - { label: "Titolo", name: "titolo", widget: "string" }
+      - { label: "Genere Principale", name: "generePrincipale", widget: "string" }
+      - { label: "Genere Secondario", name: "genereSecondario", widget: "string" }
+      - { label: "Link Immagine", name: "immagine", widget: "string" }
+      - { label: "Voto", name: "voto", widget: "number" }
+      - { label: "Anno", name: "anno", widget: "number" }
