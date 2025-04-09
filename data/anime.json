@@ -1,0 +1,35 @@
+[
+    {
+      "titolo": "91 Days",
+      "generePrincipale": "Drammatico",
+      "genereSecondario": "Storico",
+      "immagine": "https://upload.wikimedia.org/wikipedia/en/thumb/6/61/91_Days_anime_poster.jpg/220px-91_Days_anime_poster.jpg",
+      "voto": 8,
+      "anno": 2016
+    },
+    {
+      "titolo": "Abenobashi Magical Shopping Street",
+      "generePrincipale": "Commedia",
+      "genereSecondario": "Fantasy",
+      "immagine": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b8/Abenobashi_poster.jpg/220px-Abenobashi_poster.jpg",
+      "voto": 8,
+      "anno": 2002
+    },
+    {
+      "titolo": "Ajin: Demi-Human",
+      "generePrincipale": "Azione",
+      "genereSecondario": "Thriller",
+      "immagine": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a9/Ajin_anime_poster.jpg/220px-Ajin_anime_poster.jpg",
+      "voto": 7,
+      "anno": 2016
+    },
+    {
+      "titolo": "Akame Ga Kill!",
+      "generePrincipale": "Azione",
+      "genereSecondario": "Fantasy oscuro",
+      "immagine": "https://upload.wikimedia.org/wikipedia/en/thumb/9/93/Akame_ga_Kill%21_volume_1_cover.jpg/220px-Akame_ga_Kill%21_volume_1_cover.jpg",
+      "voto": 8,
+      "anno": 2014
+    }
+  ]
+  

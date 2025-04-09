@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Elenco Anime</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin: 10px;
+      overflow: hidden;
+      width: 300px;
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .card-content {
+      padding: 15px;
+    }
+    .card-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .card-info {
+      margin: 5px 0;
+    }
+    .card-info span {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="anime-container">
+    <!-- Qui verranno generate le schede degli anime -->
+  </div>
+
+  <script>
+    // Recupera il file JSON con i dati degli anime
+    fetch('data/anime.json')
+      .then(response => response.json())
+      .then(animeList => {
+        const container = document.getElementById("anime-container");
+        animeList.forEach(anime => {
+          const card = document.createElement("div");
+          card.className = "card";
+
+          const img = document.createElement("img");
+          img.src = anime.immagine;
+          img.alt = anime.titolo;
+          card.appendChild(img);
+
+          const cardContent = document.createElement("div");
+          cardContent.className = "card-content";
+
+          const title = document.createElement("div");
+          title.className = "card-title";
+          title.innerText = anime.titolo;
+          cardContent.appendChild(title);
+
+          const generePrincipale = document.createElement("div");
+          generePrincipale.className = "card-info";
+          generePrincipale.innerHTML = "<span>Genere Principale:</span> " + anime.generePrincipale;
+          cardContent.appendChild(generePrincipale);
+
+          const genereSecondario = document.createElement("div");
+          genereSecondario.className = "card-info";
+          genereSecondario.innerHTML = "<span>Genere Secondario:</span> " + anime.genereSecondario;
+          cardContent.appendChild(genereSecondario);
+
+          const voto = document.createElement("div");
+          voto.className = "card-info";
+          voto.innerHTML = "<span>Voto:</span> " + anime.voto;
+          cardContent.appendChild(voto);
+
+          const anno = document.createElement("div");
+          anno.className = "card-info";
+          anno.innerHTML = "<span>Anno:</span> " + anime.anno;
+          cardContent.appendChild(anno);
+
+          card.appendChild(cardContent);
+          container.appendChild(card);
+        });
+      })
+      .catch(error => console.error("Errore nel recupero dei dati:", error));
+  </script>
+</body>
+</html>
